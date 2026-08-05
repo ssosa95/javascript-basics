@@ -6,7 +6,7 @@ console.log(greeting("Samuel"));
 
 const greet = (name) => {
     return "Welcome to the price calculator, " + name + ".";
-}
+};
 
 console.log(greet("Samuel"));
 

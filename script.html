@@ -2,9 +2,112 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JS Practice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- This single line is what tells the browser "actually render at the device's real width." -->
+    <title>Information Central</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script src="functions.js"></script>
+    
+    <header id="site-header">
+        <h1>Welcome!</h1>
+        <nav>
+            <ul class="header">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2 class="highlight">About Me</h2>
+            <p>Hi, I am Samuel and this is my website. There are many like it but this one is mine.</p>
+        </section>
+        <section>
+            <h2 class="highlight">What did I learn this month?</h2>
+            <div class="grid-example">
+                <div class="grid-item"><a href="https://github.com/ssosa95/bash-practice">Bash</a></div>
+                <div class="grid-item"><a href="https://github.com/ssosa95/python-basics">Python</a></div>
+                <div class="grid-item"><a href="https://github.com/ssosa95/sqlite-basics">SQL</a></div>
+                <div class="grid-item"><a href="https://github.com/ssosa95/html-css-basics">HTML</a></div>
+            </div>
+        </section>
+        <section>
+            <h2 class="highlight">What is next?</h2>
+            <ol class="card">
+                <li>More HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+            </ol>
+        </section>
+    </main>
+    <footer>
+        <section>
+            <h2 class="highlight">Are you interested in following my journey?</h2>
+            <p>This is my <a href="https://github.com/ssosa95">GitHub</a>.</p>
+            <p>If you wish to sign up for my mailing list, please provide your information below:</p>
+            <form>
+            <div class="form-row">
+                <div class="form-field">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-field">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="you@example.com">
+                </div>
+            </div> 
+            
+            <label for="topic">Of these, what are you learning now?</label>
+            
+            <select id="topic" name="topic">
+                <option value="" disabled selected>Select one</option>
+                <option value="python">Python</option>
+                <option value="bash">Bash</option>
+                <option value="javascript">Javascript</option>
+                <option value="SQL">SQL</option>
+                <option value="other-dropdown">Other</option>
+            </select>
+            
+            <label class="label-font-size" for="other-written">If other, please write what you are learning:</label>
+            <input type="text" id="other-written" name="other-written">
+                
+            <fieldset>
+                <legend>Which would you like to be informed about?</legend>
+                <input type="checkbox" id="html" name="html">
+                <label for="html">HTML</label>      
+
+                <input type="checkbox" id="css" name="css">      
+                <label for="css">CSS</label>
+
+                <input type="checkbox" id="javascript" name="javascript">
+                <label for="javascript">Javascript</label>
+
+                <input type="checkbox" id="other-checkbox" name="other-checkbox">
+                <label for="other-checkbox">Other</label>
+
+                <button type="submit" class="button">Send</button>
+            </fieldset>
+            </form>
+
+        
+        </section>
+    
+        
+        <section>
+            <div class="description">
+                <img src="images/wang-lin-renegade-immortal.jpg" alt="This is Wang Lin.">
+                <p class="box">This is Wang Lin. My favourite character in the novel, Renegade Immortal.</p>
+            </div>
+        </section>
+        <nav>
+            <ul class="footer">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </footer>
+    <script src="dombasics.js"></script>
 </body>
 </html>
