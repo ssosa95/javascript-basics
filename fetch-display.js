@@ -1,0 +1,17 @@
+async function displayAllUsers() {
+    const userList = document.querySelector("#userList");
+    const response = await fetch("https://jsonplaceholder.typicode.com/users/");
+    const data = await response.json();
+
+    data.forEach((user) => {
+        userList.innerHTML += `
+            <h2>${user.name}</h2>
+            <p>Address: ${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}</p>
+            <p>Email: ${user.email}</p>
+            <p>Phone Number: ${user.phone}</p>
+            <p>Company: ${user.company.name}</p>
+        `;
+    });
+}
+
+displayAllUsers();
