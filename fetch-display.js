@@ -1,7 +1,7 @@
 async function displayAllUsers() {
     try {
         const userList = document.querySelector("#userList");
-        const response = await fetch("https://jsonplacehilder.typicode.com/users/");
+        const response = await fetch("https://jsonplaceholder.typicode.com/users/");
         
         if (!response.ok) {
             throw new Error(`Request failed with status ${response.status}`);
