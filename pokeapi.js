@@ -41,6 +41,11 @@ function getData() {
 
                     });
 
+                    let statsHTML = "";
+                    data.stats.forEach((stat) => {
+                        statsHTML += `<li>${capitalize(stat.stat.name)}: ${stat.base_stat}</li>`;
+                    });
+
                     let movesHTML = "";
                     data.moves.forEach((move) => {
                         movesHTML += `<li>${capitalize(move.move.name)}</li>`;
@@ -52,6 +57,8 @@ function getData() {
                     <ul>${typesHTML}</ul>
                     <p>Abilities:</p>
                     <ul>${abilitiesHTML}</ul>
+                    <p>Stats:</p>
+                    <ul>${statsHTML}</ul>
                     <p>Moves:</p>
                     <ul>${movesHTML}</ul>
                     
