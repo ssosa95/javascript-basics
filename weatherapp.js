@@ -5,6 +5,18 @@ function displayWeather() {
         const latitudeInput = document.querySelector("#latitude");
         const longitudeInput = document.querySelector("#longitude");
 
+        latitudeInput.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+            searchQuery.click();
+    }
+});
+
+        longitudeInput.addEventListener("keydown", (event) => {
+            if (event.key === "Enter") {
+            searchQuery.click();
+    }
+});
+
         searchQuery.addEventListener("click", async () => {
             const latitudeData = latitudeInput.value;
             const longitudeData = longitudeInput.value;
@@ -18,6 +30,7 @@ function displayWeather() {
                 !Number.isNaN(numericLong)
 
             ) {
+                weatherInfo.innerHTML = "Loading weather data, please wait...";
                 try {
                     const response = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=${latitudeData}&longitude=${longitudeData}&current=temperature_2m,weather_code`);
                     if (!response.ok) {
@@ -25,15 +38,20 @@ function displayWeather() {
                     }
 
                     const data = await response.json();
-                    
+                    console.log(data);
                     weatherInfo.innerHTML = `
                     <h2>Location: ${data.latitude}° latitude, ${data.longitude}° longitude </h2>
                     <p>Temperature: ${data.current.temperature_2m}°C </p>
                     `;
                     
                 } catch (error) {
-                    console.log("Error fetching user data:", error);
-            }}});
+                    weatherInfo.innerHTML = `<p>Something went wrong: ${error.message}</p>`;
+                    console.log("Error fetching weather data:", error);
+            }}
+            else {
+                weatherInfo.innerHTML = "<p>Please enter valid latitude and longitude values.</p>";
+            }
+        });
         
         
 } 
