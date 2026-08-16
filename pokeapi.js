@@ -29,21 +29,32 @@ function getData() {
 
                     const data = await response.json();
                     console.log(data);
+
+                    let typesHTML = "";
+                    data.types.forEach((type) => {
+                        typesHTML += `<li>${capitalize(type.type.name)}</li>`;
+                    });
+
                     let abilitiesHTML = "";
                     data.abilities.forEach((ability) => {
                         abilitiesHTML += `<li>${capitalize(ability.ability.name)}</li>`;
 
-                    })
+                    });
+
                     let movesHTML = "";
                     data.moves.forEach((move) => {
                         movesHTML += `<li>${capitalize(move.move.name)}</li>`;
-                    })
+                    });
+
                     pokemonsearch.innerHTML = `
                     <h2>${capitalize(data.name)}</h2>
+                    <p>Types:</p>
+                    <ul>${typesHTML}</ul>
                     <p>Abilities:</p>
                     <ul>${abilitiesHTML}</ul>
                     <p>Moves:</p>
                     <ul>${movesHTML}</ul>
+                    
                     
                     `
                     
