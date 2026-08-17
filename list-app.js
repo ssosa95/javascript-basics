@@ -33,15 +33,6 @@ removeButton.addEventListener("click", () => {
         removeItem.value = "";
     }
 });
-   
-
-addItem.addEventListener("input", () => {
-    console.log(addItem.value);
-});
-
-removeItem.addEventListener("input", () => {
-    console.log(removeItem.value);
-});
 
 addItem.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {

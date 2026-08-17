@@ -37,8 +37,7 @@ function displayWeather() {
                         throw new Error(`Request failed with status ${response.status}`);
                     }
 
-                    const data = await response.json();
-                    console.log(data);
+                    const data = await response.json();                    
                     weatherInfo.innerHTML = `
                     <h2>Location: ${data.latitude}° latitude, ${data.longitude}° longitude </h2>
                     <p>Temperature: ${data.current.temperature_2m}°C </p>
