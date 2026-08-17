@@ -7,10 +7,11 @@ const listItem = document.querySelector("#itemList");
 const removeItem = document.querySelector("#removeInput");
 
 function renderList() {
-    listItem.innerHTML = "";
+    let listHTML = "";
     items.forEach((item, index) => {
-        listItem.innerHTML += `<li>${index + 1}. ${item}</li>`;
+        listHTML += `<li>${index + 1}. ${item}</li>`;
     });
+    listItem.innerHTML = listHTML;
 }
 
 addButton.addEventListener("click", () => {
